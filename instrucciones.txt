@@ -1,0 +1,9 @@
+1. Open your terminal.
+
+2. Navigate to your project directory.
+
+cd "C:/Users/Fer/Desktop/Proyectos DS en ingenieria/Predictive_maintenance/"
+
+3. Run the application using the following command:
+
+python -m streamlit run app.py
