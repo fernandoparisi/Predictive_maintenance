@@ -15,10 +15,10 @@ La solución se implementó con una aplicación interactiva usando **Streamlit**
 - **Ingeniería de Características:** Se crearon nuevas variables para mejorar la capacidad predictiva de los modelos.
 
 - **Modelado de Machine Learning:** Se evaluaron cuatro modelos de **clasificación binaria:**
-- Regresión Logística
-- Random Forest
-- Gradient Boosting
-- XGBoost
+  1. Regresión Logística
+  2. Random Forest
+  3. Gradient Boosting
+  4. XGBoost
 
 Se analizó el modelo de **clasificación multiclase**, pero se descartó el análisis del mismo por **desbalances de clases**
 
