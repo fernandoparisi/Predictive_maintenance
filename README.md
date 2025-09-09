@@ -20,6 +20,8 @@ La solución se implementó con una aplicación interactiva usando **Streamlit**
 - Gradient Boosting
 - XGBoost
 
+Se analizó el modelo de **clasificación multiclase**, pero se descartó el análisis del mismo por **desbalances de clases**
+
 **Resultados y Evaluación:** El modelo de XGBoost se destacó como el de mejor rendimiento, logrando un **F1-Score de 0.72** en la clase "Falla".
 
 **Aplicación Web Interactiva:** Una app construida con **Streamlit** para visualizar las predicciones y el desempeño del modelo.
