@@ -10,11 +10,11 @@ La solución se implementó con una aplicación interactiva usando **Streamlit**
 - **app.py**: Archivo base de la app creada en Streamlit. Link: https://predictivemaintenance-parisi.streamlit.app/ 
 
 # Resumen del proyecto
-**Análisis Exploratorio de Datos (EDA):** Se realizó un análisis detallado del dataset de mantenimiento predictivo para entender las variables y la distribución de los datos.
+- **Análisis Exploratorio de Datos (EDA):** Se realizó un análisis detallado del dataset de mantenimiento predictivo para entender las variables y la distribución de los datos.
 
-**Ingeniería de Características:** Se crearon nuevas variables para mejorar la capacidad predictiva de los modelos.
+- **Ingeniería de Características:** Se crearon nuevas variables para mejorar la capacidad predictiva de los modelos.
 
-**Modelado de Machine Learning:** Se evaluaron cuatro modelos de **clasificación binaria:**
+- **Modelado de Machine Learning:** Se evaluaron cuatro modelos de **clasificación binaria:**
 - Regresión Logística
 - Random Forest
 - Gradient Boosting
@@ -22,6 +22,6 @@ La solución se implementó con una aplicación interactiva usando **Streamlit**
 
 Se analizó el modelo de **clasificación multiclase**, pero se descartó el análisis del mismo por **desbalances de clases**
 
-**Resultados y Evaluación:** El modelo de XGBoost se destacó como el de mejor rendimiento, logrando un **F1-Score de 0.72** en la clase "Falla".
+- **Resultados y Evaluación:** El modelo de XGBoost se destacó como el de mejor rendimiento, logrando un **F1-Score de 0.72** en la clase "Falla".
 
-**Aplicación Web Interactiva:** Una app construida con **Streamlit** para visualizar las predicciones y el desempeño del modelo.
+- **Aplicación Web Interactiva:** Una app construida con **Streamlit** para visualizar las predicciones y el desempeño del modelo.
