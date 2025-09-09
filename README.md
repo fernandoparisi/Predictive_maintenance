@@ -1,6 +1,6 @@
 # 🛠️ Mantenimiento Predictivo  
 
-## 🎯 Objetivo del Proyecto  
+## Objetivo del Proyecto  
 
 El objetivo principal de este proyecto es **predecir fallas en máquinas industriales** con el fin de evitar paradas no planificadas y reducir los costos operativos.  
 Mediante el análisis de datos provenientes de sensores y la aplicación de técnicas de **machine learning**, se identifican patrones que anticipan una posible falla, lo que permite implementar un mantenimiento **preventivo, proactivo y eficiente**.  
@@ -9,7 +9,7 @@ La solución fue desplegada a través de una aplicación interactiva desarrollad
 
 ---
 
-## 📂 Archivos  
+## Archivos  
 
 - **predictive_maintenance.ipynb**: Notebook con el desarrollo completo del proyecto.  
 - **predictive_maintenance.csv**: Dataset utilizado, obtenido de Kaggle.  
@@ -19,7 +19,7 @@ La solución fue desplegada a través de una aplicación interactiva desarrollad
 
 ---
 
-## 📊 Resumen del Proyecto  
+## Resumen del Proyecto  
 
 - **Análisis Exploratorio de Datos (EDA):**  
   Se realizó un estudio detallado del dataset para comprender las variables, su distribución y las relaciones entre ellas.  
