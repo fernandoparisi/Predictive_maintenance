@@ -29,13 +29,12 @@ except Exception as e:
 
 
 # --- 2. DEFINICIÓN Y ENTRENAMIENTO DE LOS MODELOS (AHORA EN CACHÉ) ---
-# Usamos @st.cache_data para que esta función solo se ejecute una vez.
-# Esto hace que el entrenamiento sea instantáneo en las ejecuciones posteriores.
-@st.cache_data
+# Usamos @st.cache_resource para que esta función solo se ejecute una vez y almacene los modelos.
+@st.cache_resource
 def train_models(X_train, y_train):
     """
-    Entrena y devuelve un diccionario de modelos de aprendizaje automático.
-    Esta función se ejecuta solo una vez gracias a st.cache_data.
+    Entrena y devuelve un diccionario de modelos de aprendizaje automático binarios.
+    Esta función se ejecuta solo una vez.
     """
     # Preprocesador para la columna 'Type'
     preprocessor = ColumnTransformer(
@@ -69,7 +68,7 @@ def train_models(X_train, y_train):
         ])
     }
 
-    # Entrenar todos los modelos y devolver los pipelines
+    # Entrenar todos los modelos
     for name, pipeline in pipelines.items():
         pipeline.fit(X_train, y_train)
 
@@ -82,48 +81,90 @@ with st.spinner('Entrenando modelos (esto solo ocurre la primera vez)...'):
 st.success('¡Entrenamiento de modelos completado!')
 
 
-# --- 3. INTERFAZ DE STREAMLIT ---
-# Usamos columnas para un control preciso del título y el emoji
-col_empty1, col_title, col_icon, col_empty2 = st.columns([2, 5, 1, 2])
-with col_title:
-    st.markdown("<h2 style='text-align: right;'>Predicción de Fallas en Máquinas</h2>", unsafe_allow_html=True)
-with col_icon:
-    st.markdown("## 🛠️")
+# --- 3. DICCIONARIOS DE IDIOMAS ---
+text_strings = {
+    'es': {
+        'title': 'Predicción de Fallas en Máquinas 🛠️',
+        'subtitle': 'Seleccione un modelo y ajuste los parámetros de la máquina.',
+        'select_model': 'Seleccionar Modelo',
+        'section_params': 'Parámetros de la Máquina',
+        'type': 'Tipo de Producto',
+        'air_temp': 'Temperatura del Aire [K]',
+        'process_temp': 'Temperatura del Proceso [K]',
+        'rotational_speed': 'Velocidad de Rotación [rpm]',
+        'torque': 'Torque [Nm]',
+        'tool_wear': 'Desgaste de Herramienta [min]',
+        'predict_button': 'Predecir Falla',
+        'prediction_title': 'Resultado de la Predicción',
+        'failure_detected': '¡PREDICCIÓN: FALLA DETECTADA!',
+        'no_failure': 'PREDICCIÓN: No hay falla.',
+        'loading': 'Entrenando modelos (esto solo ocurre la primera vez)...',
+        'success_loading': '¡Entrenamiento de modelos completado!'
+    },
+    'en': {
+        'title': 'Machine Failure Prediction 🛠️',
+        'subtitle': 'Select a model and adjust the machine parameters.',
+        'select_model': 'Select Model',
+        'section_params': 'Machine Parameters',
+        'type': 'Product Type',
+        'air_temp': 'Air Temperature [K]',
+        'process_temp': 'Process Temperature [K]',
+        'rotational_speed': 'Rotational Speed [rpm]',
+        'torque': 'Torque [Nm]',
+        'tool_wear': 'Tool Wear [min]',
+        'predict_button': 'Predict Failure',
+        'prediction_title': 'Prediction Result',
+        'failure_detected': 'PREDICTION: FAILURE DETECTED!',
+        'no_failure': 'PREDICTION: No failure.',
+        'loading': 'Training models (this only happens the first time)...',
+        'success_loading': 'Model training completed!'
+    }
+}
 
-st.markdown("""
+# --- 4. INTERFAZ DE STREAMLIT ---
+# Selector de idioma
+lang = st.selectbox(
+    "Select Language / Seleccionar Idioma",
+    ('es', 'en'),
+    format_func=lambda x: 'Español' if x == 'es' else 'English'
+)
+
+# Título y subtítulo
+st.markdown(f"## {text_strings[lang]['title']}") # CAMBIO AQUÍ: USANDO MARKDOWN PARA UN TAMAÑO MÁS GRANDE QUE ANTES
+st.markdown(f"""
 <div style='background-color: #f0f2f6; padding: 10px; border-radius: 10px;'>
-    <h3 style='text-align: center;'>Seleccione un modelo y ajuste los parámetros de la máquina.</h3>
+    <h3 style='text-align: center;'>{text_strings[lang]['subtitle']}</h3>
 </div>
 """, unsafe_allow_html=True)
 
 # Selección del modelo
 model_option = st.selectbox(
-    'Seleccionar Modelo',
+    text_strings[lang]['select_model'],
     ('XGBoost', 'LightGBM', 'Bosque Aleatorio', 'Regresión Logística')
 )
 
 st.markdown("---")
 
 # Entradas de usuario con sliders
-st.subheader("Parámetros de la Máquina")
+st.subheader(text_strings[lang]['section_params'])
 
 col1, col2, col3 = st.columns(3)
 
 with col1:
-    tipo = st.selectbox('Tipo de Producto', ('L', 'M', 'H'))
-    temp_aire = st.slider('Temperatura del Aire [K]', min_value=290.0, max_value=310.0, value=298.6, step=0.1)
+    tipo = st.selectbox(text_strings[lang]['type'], ('L', 'M', 'H'))
+    temp_aire = st.slider(text_strings[lang]['air_temp'], min_value=290.0, max_value=310.0, value=298.6, step=0.1)
 
 with col2:
-    temp_proceso = st.slider('Temperatura del Proceso [K]', min_value=300.0, max_value=320.0, value=308.6, step=0.1)
-    vel_rotacion = st.slider('Velocidad de Rotación [rpm]', min_value=800, max_value=3000, value=1000)
+    temp_proceso = st.slider(text_strings[lang]['process_temp'], min_value=300.0, max_value=320.0, value=308.6, step=0.1)
+    vel_rotacion = st.slider(text_strings[lang]['rotational_speed'], min_value=800, max_value=3000, value=1000)
 
 with col3:
-    torque = st.slider('Torque [Nm]', min_value=0.0, max_value=80.0, value=40.0, step=0.1)
-    desgaste_herramienta = st.slider('Desgaste de Herramienta [min]', min_value=0, max_value=300, value=0)
+    torque = st.slider(text_strings[lang]['torque'], min_value=0.0, max_value=80.0, value=40.0, step=0.1)
+    desgaste_herramienta = st.slider(text_strings[lang]['tool_wear'], min_value=0, max_value=300, value=0)
 
 
 # Botón de predicción
-if st.button('Predecir Falla', key='predict_button'):
+if st.button(text_strings[lang]['predict_button'], key='predict_button'):
     # Crear un DataFrame con los datos de entrada
     datos_entrada = pd.DataFrame({
         'UDI': [1234],
@@ -141,7 +182,8 @@ if st.button('Predecir Falla', key='predict_button'):
 
     # Mostrar el resultado
     st.markdown("---")
+    st.subheader(text_strings[lang]['prediction_title'])
     if prediccion == 1:
-        st.error('¡PREDICCIÓN: FALLA DETECTADA!')
+        st.error(text_strings[lang]['failure_detected'])
     else:
-        st.success('PREDICCIÓN: No hay falla.')
+        st.success(text_strings[lang]['no_failure'])
