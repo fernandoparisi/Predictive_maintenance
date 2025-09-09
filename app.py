@@ -130,12 +130,8 @@ lang = st.selectbox(
 )
 
 # Título y subtítulo
-st.markdown(f"## {text_strings[lang]['title']}") # CAMBIO AQUÍ: USANDO MARKDOWN PARA UN TAMAÑO MÁS GRANDE QUE ANTES
-st.markdown(f"""
-<div style='background-color: #f0f2f6; padding: 10px; border-radius: 10px;'>
-    <h3 style='text-align: center;'>{text_strings[lang]['subtitle']}</h3>
-</div>
-""", unsafe_allow_html=True)
+st.markdown(f"## {text_strings[lang]['title']}")
+st.info(text_strings[lang]['subtitle']) # CAMBIO AQUÍ: USANDO st.info()
 
 # Selección del modelo
 model_option = st.selectbox(
