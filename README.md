@@ -45,7 +45,7 @@ La solución fue desplegada a través de una aplicación interactiva desarrollad
 ---
 # 🛠️ *Predictive Maintenance*  
 
-## 🎯 *Project Objective*  
+## *Project Objective*  
 
 *The main goal of this project is to **predict failures in industrial machines** in order to avoid unplanned downtime and reduce operational costs.*  
 *By analyzing sensor data and applying **machine learning** techniques, patterns that anticipate potential failures are identified, enabling **preventive, proactive, and efficient** maintenance.*  
@@ -54,7 +54,7 @@ La solución fue desplegada a través de una aplicación interactiva desarrollad
 
 ---
 
-## 📂 *Files*  
+## *Files*  
 
 - **predictive_maintenance.ipynb**: *Notebook containing the complete project development.*  
 - **predictive_maintenance.csv**: *Dataset used, obtained from Kaggle.*  
@@ -64,7 +64,7 @@ La solución fue desplegada a través de una aplicación interactiva desarrollad
 
 ---
 
-## 📊 *Project Summary*  
+## *Project Summary*  
 
 - **Exploratory Data Analysis (EDA):**  
   *A detailed analysis of the dataset was performed to understand the variables, their distribution, and relationships.*  
