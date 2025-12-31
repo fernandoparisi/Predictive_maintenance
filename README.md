@@ -79,6 +79,8 @@ A multiclass classification approach was also explored but ultimately discarded 
 
 The **XGBoost model** achieved the best performance, reaching an **F1-Score of 0.72 for the “Failure” class**.
 
+![Captura de pantalla 2025-12-31 100901](https://github.com/user-attachments/assets/493175f9-6d0d-46b5-9575-6530010cca77)
+
 The evaluation prioritized performance on rare but critical failure events, making the model suitable for predictive maintenance scenarios where missing a failure is more costly than false positives.
 
 ---
