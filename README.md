@@ -2,7 +2,9 @@
 
 This project delivers an **end-to-end predictive maintenance solution** designed to reduce unplanned downtime and optimize maintenance decisions for industrial equipment.
 
-The solution is deployed through an **interactive web application built with Streamlit**, allowing users to simulate operating conditions and obtain real-time failure predictions based on machine learning models. 🔗 **Live App:** https://predictivemaintenance-parisi.streamlit.app/
+The solution is deployed through an **interactive web application built with Streamlit**, allowing users to simulate operating conditions and obtain real-time failure predictions based on machine learning models. 
+
+🔗 **Live App:** https://predictivemaintenance-parisi.streamlit.app/
 
 ![Machine Learning Prediction](https://github.com/user-attachments/assets/2242b72a-1522-4a0d-ba4d-818d91b25d1a)
 
