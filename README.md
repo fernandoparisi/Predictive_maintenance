@@ -11,7 +11,7 @@
 
 ## *Files*  
 
-- **predictive_maintenance.ipynb**: Notebook containing the complete project development.🔗 [*View notebook*](https://github.com/fernandoparisi/Predictive_maintenance/blob/main/predictive_maintenance.ipynb)
+- **predictive_maintenance.ipynb**: *Notebook containing the complete project development.*🔗 [*View notebook*](https://github.com/fernandoparisi/Predictive_maintenance/blob/main/predictive_maintenance.ipynb)
 - **predictive_maintenance.csv**: *Dataset used, obtained from Kaggle.* 🔗 [*View dataset on Kaggle*](https://www.kaggle.com/datasets/shivamb/machine-predictive-maintenance-classification)  
 - **app.py**: *Base code of the Streamlit application.* 🔗 [*Access the app*](https://predictivemaintenance-parisi.streamlit.app/)  
 
