@@ -20,7 +20,9 @@
 ## *Project Summary*  
 
 - **Exploratory Data Analysis (EDA):**  
-  *A detailed analysis of the dataset was performed to understand the variables, their distribution, and relationships.*  
+  *A detailed analysis of the dataset was performed to understand the variables, their distribution, and relationships.*
+![1757450880254](https://github.com/user-attachments/assets/c0c6b6f8-7115-447a-85f2-2b0862a0a27b)
+![1757450880115](https://github.com/user-attachments/assets/48b72efa-9623-4a04-90dd-423055feaeec)
 
 - **Feature Engineering:**  
   *New variables were created to improve the predictive power of the models.*  
