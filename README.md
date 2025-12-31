@@ -36,8 +36,6 @@ By analyzing sensor data and applying machine learning techniques, the project i
 ## 📊 Exploratory Data Analysis (EDA)
 
 ### Correlation Analysis
-![1757450880115](https://github.com/user-attachments/assets/927eae39-57e0-4715-aa1f-69c085871976)
-
 A correlation analysis was conducted to identify relationships between operational variables.  
 Strong correlations were observed between:
 - Process temperature and air temperature  
@@ -45,13 +43,16 @@ Strong correlations were observed between:
 
 These relationships highlight key operational dependencies and potential multicollinearity, informing feature selection and model choice.
 
+![1757450880115](https://github.com/user-attachments/assets/927eae39-57e0-4715-aa1f-69c085871976)
+
 ---
 
 ### Feature Relationships and Failure Patterns
-![1757450880254](https://github.com/user-attachments/assets/704c7268-2cc6-417a-9538-d188f072b402)
 
 Scatter plots colored by failure occurrence were used to explore how different operating conditions relate to machine failures.  
 Although failures are relatively rare, certain regions of the feature space show higher concentrations of failure events, supporting the use of non-linear models.
+
+![1757450880254](https://github.com/user-attachments/assets/704c7268-2cc6-417a-9538-d188f072b402)
 
 ---
 
