@@ -11,12 +11,9 @@ La solución fue desplegada a través de una aplicación interactiva desarrollad
 
 ## Archivos  
 
-- **predictive_maintenance.ipynb**: Notebook con el desarrollo completo del proyecto.
-  🔗 [Ver notebook](https://github.com/fernandoparisi/Predictive_maintenance/blob/main/predictive_maintenance.ipynb)
-- **predictive_maintenance.csv**: Dataset utilizado, obtenido de Kaggle.  
-  🔗 [Ver dataset en Kaggle](https://www.kaggle.com/datasets/shivamb/machine-predictive-maintenance-classification)  
-- **app.py**: Código base de la aplicación en Streamlit.  
-  🔗 [Acceso a la aplicación](https://predictivemaintenance-parisi.streamlit.app/)  
+- **predictive_maintenance.ipynb**: Notebook con el desarrollo completo del proyecto. 🔗 [Ver notebook](https://github.com/fernandoparisi/Predictive_maintenance/blob/main/predictive_maintenance.ipynb)
+- **predictive_maintenance.csv**: Dataset utilizado, obtenido de Kaggle. 🔗 [Ver dataset en Kaggle](https://www.kaggle.com/datasets/shivamb/machine-predictive-maintenance-classification)  
+- **app.py**: Código base de la aplicación en Streamlit. 🔗 [Acceso a la aplicación](https://predictivemaintenance-parisi.streamlit.app/)  
 
 ---
 
