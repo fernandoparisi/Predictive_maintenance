@@ -39,5 +39,6 @@
 
 - **Interactive Web Application:**  
   *An app was built with **Streamlit** to query real-time predictions and visualize model performance.*  
+![Machine Learning Prediction](https://github.com/user-attachments/assets/b57758ad-3efc-43ee-b9ae-aa302006b989)
 
 
